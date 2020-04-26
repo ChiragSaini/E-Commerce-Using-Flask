@@ -28,9 +28,11 @@
   <li>Adding some sort of Payments System</li>
   <li>Some Sort of verification for customer registration</li>
   <li>More Details and Images on Product Details Page</li>
+  <li>Imporving User Management and sessions</li>
+  <li>Adding Carousels and other things to imporve UI</li>
  </ul>
  
- ### Wanna help to add some features or modify, Just send a pull request and we can see what can we do.
+ ### Wanna help to add some features or modify, Just send a pull request and lets make it happen. :D 
  # Screenshots
 <ol>
   <li>Home Page: </li><br>
