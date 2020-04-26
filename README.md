@@ -37,13 +37,13 @@
   <img src="https://github.com/ChiragSaini/E-Commerce-Using-Flask/blob/master/Screenshots/homescreen.PNG"><br><br>
   <li>Product Details Screen:</li><br>
   <img src="https://github.com/ChiragSaini/E-Commerce-Using-Flask/blob/master/Screenshots/product_details_screen.PNG"><br><br>
-  <li>Cart Screen: <li><br>
+  <li>Cart Screen: </li><br>
   <img src="https://github.com/ChiragSaini/E-Commerce-Using-Flask/blob/master/Screenshots/cart_screen.PNG"><br><br>
-  <li>Admin Home Page: <li><br>
+  <li>Admin Home Page: </li><br>
   <img src="https://github.com/ChiragSaini/E-Commerce-Using-Flask/blob/master/Screenshots/admin_home_screen.PNG"><br><br>
-  <li>Admin Panel Add product: <li><br>
+  <li>Admin Panel Add product: </li><br>
   <img src="https://github.com/ChiragSaini/E-Commerce-Using-Flask/blob/master/Screenshots/admin_add_product.PNG"><br><br>
-  <li>Admin Edit/Remove Brand Page: <li><br>
+  <li>Admin Edit/Remove Brand Page: </li><br>
   <img src="https://github.com/ChiragSaini/E-Commerce-Using-Flask/blob/master/Screenshots/admin_brands_page.PNG"><br><br>
 </ol>
  
