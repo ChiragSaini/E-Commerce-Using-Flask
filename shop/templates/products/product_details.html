@@ -1,0 +1,45 @@
+{% extends 'layout.html' %}
+
+{% block body_block %}
+{% include 'navbar.html' %}
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-md-6" id='b_image'>
+            <img src="{{url_for('static', filename='images/'+product.image_1)}}" alt="{{product.name}}" width="400px">
+        </div>
+        <div class="col-md-6">
+            <h4>{{product.name}}</h4>
+            <hr>
+            <h5>By: {{product.brand.name}}</h5>
+            <p>Price: {{product.price}}</p>
+            <strong>Desciption:</strong>
+            <p>{{product.desc}}</p>
+            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sed, incidunt. Quidem minus fugiat magnam nihil. Accusantium totam cum quasi, atque excepturi asperiores illo minima nostrum fuga iste. Aliquid nostrum provident veritatis nesciunt dignissimos neque impedit? Odit commodi quis eum voluptatum quisquam veritatis autem quaerat modi officiis harum, dolorem, illo quod, vel quasi dolor quas. Alias adipisci doloremque ex pariatur dolorum sed at placeat tempora modi, eligendi magni, impedit id, perspiciatis ipsum nesciunt fugit inventore sapiente maiores eveniet culpa repellendus illum debitis voluptatum? Iure quaerat provident ullam, facilis repellat, non sed atque commodi ipsam, quia inventore! Dignissimos amet repellat expedita repudiandae.</p>
+            <hr>
+            <form action="{{url_for('add_cart')}}" method="post">
+                    <input type="hidden" name="product_id" value="{{product.id}}">
+                    <button type="submit" class="btn btn-sm btn-warning">Add to Cart</button>
+                    <label for="">Quantity</label>
+                    <input type="number" name="quantity" id='' value="1" min="1" max="{{product.stock}}">
+            </form>
+            <!-- <a href="" class="btn btn-warning">Add to Cart</a> -->
+        </div>
+    </div>
+    <!-- <div class="row">
+        <div class="col-md-12 mt-3" id='s_image'>
+            <img src="{{url_for('static', filename='images/'+product.image_1)}}" alt="{{product.name}}" height="120" width="120" class="p-3">
+        </div>
+    </div> -->
+</div>
+<!-- <script>
+    var b_image = document.getElementById('b_image')
+    var s_image = document.getElementById('s_image').getElementsByTagName('img')
+    for ( var i=0; i<s_image.length; i++){
+        s_image[i].addEventListener('click', full_image);
+    }
+    function full_image(){
+        var ImageSRC = this.getAttribute('src')
+        b_image.innerHTML = "<img src=" + ImageSRC + " width='400'>";
+    }
+</script> -->
+{% endblock body_block %}

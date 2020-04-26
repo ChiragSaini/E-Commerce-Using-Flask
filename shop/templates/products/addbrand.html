@@ -1,0 +1,26 @@
+{% extends 'layout.html' %}
+
+{% block body_block %}
+<div class="container">
+    <div class="row">
+        <div class="col-md-3"></div>
+        <div class="col-md-6">
+            {% include '_messages.html' %}
+            {% if brands %}
+            <h1 class="text-center mt-5">Add a brand</h1>
+            <form method="post">
+                <input type="text" name="brand" class="form-control">
+                <input type="submit" value="Add Brand" class="btn btn-primary mt-2">
+            </form>
+            {% else %}
+            <h1 class="text-center mt-5">Add a Category</h1>
+            <form method="post">
+                <input type="text" name="category" class="form-control">
+                <input type="submit" value="Add Category" class="btn btn-primary mt-2">
+            </form>
+            {% endif %}
+        </div>
+        <div class="col-md-3"></div>
+    </div>
+</div>
+{% endblock body_block %}

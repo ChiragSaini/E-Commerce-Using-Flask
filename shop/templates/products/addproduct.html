@@ -1,0 +1,48 @@
+{% extends 'layout.html' %}
+
+{% block body_block %}
+{% include '_messages.html' %}
+<div class="container">
+    <div class="row">
+    <div class="col-md-2"></div>
+    <div class="col-md-8">
+        <h2 class="text-center bg-info p-2">
+            Add product
+        </h2>
+        {% from '_formhelpers.html' import render_field %}
+        <form method="POST" enctype="multipart/form-data">
+            {{ render_field(form.name, class="form-control", placeholder="Product Name")}}
+            {{ render_field(form.price, class="form-control", placeholder="Price") }}
+            {{ render_field(form.stock, class="form-control", placeholder="Stock") }}
+            <label for="brand">Add a Brand</label>
+            <select class="form-control" name="brand" id="brand">
+                <option value="" class="form-control" required> Select a Brand</option>
+                {% for brand in brands%}
+                    <option value={{brand.id}} class="form-control">{{brand.name}}</option>
+                {% endfor %}
+            </select>
+            <label for="category">Add a Category</label>
+            <select class="form-control" name="category" id="category">
+                <option value="" class="form-control" required> Select a Category</option>
+                {% for category in categories %}
+                    <option value={{category.id}} class="form-control">{{category.name}}</option>
+                {% endfor %}
+            </select>
+            {{ render_field(form.desc, class="form-control", placeholder="Product Description", rows=10) }}
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-4">
+                        {{ render_field(form.image_1, class="form-control")}}
+                    </div>
+                </div>
+            </div>
+
+            <button type="submit" class="btn btn-outline-info mt-4">Add Product</button>
+        </form>
+        <br>
+        <a href="{{url_for('admin')}}" class="btn btn-outline-warning mb-4">Cancel</a>
+    </div>
+    <div class="col-md-2"></div>
+</div>
+</div>
+{% endblock body_block %}

@@ -1,0 +1,74 @@
+{% extends 'layout.html' %}
+
+{% block body_block %}
+{% include 'navbar.html' %}
+<style>
+    img {
+        display: block;
+        max-width: 230px;
+        max-height: 150px;
+        width: auto;
+        height: auto;
+        border-radius: 10px;
+        /* border-color: blueviolet; */
+        border: 2px solid blueviolet;
+    }
+</style>
+
+<div class="container mt-2">
+    {% include '_messages.html' %}
+    <h1 class="mt-3 text-center">Cart</h1>
+    <h5 class="mt-2 p-2 text-left">Here are the items that you added to Cart <strong>"{{session['email']}}"</strong>
+    </h5>
+    <div class="row mt-3">
+        <div class="col-md-12">
+            <table class="table table-sm table-striped table-hover table-responsive-md">
+                <thead>
+                    <th>Sr.</th>
+                    <th>Image</th>
+                    <th>Name</th>
+                    <th>Price</th>
+                    <th>Quantity</th>
+                    <th>SubTotal</th>
+                    <th>Update</th>
+                    <th>Delete</th>
+                </thead>
+                <tbody>
+                    {% for key, product in session['shopcart'].items() %}
+                    <tr>
+                        <td>{{loop.index}}</td>
+                        <td>
+                            <a href="{{url_for('product_details', id=key)}}">
+                                <img src="{{url_for('static', filename='images/'+ product['image'])}}"
+                                    alt="Image should be here">
+                            </a>
+                        </td>
+                        <td>{{product['name']}}</td>
+                        <td>{{product['price']}}</td>
+                        <form class="form-group" method="POST" action="{{url_for('updatecart', code=key)}}">
+                            <td>
+                                <input class="form-control p-2" type="number" name="quantity" min="1" max="10" value="{{product['quantity']}}">
+                            </td>
+                            <td>{{product['price'] * product['quantity']|int}}</td>
+                            <td><button type="submit" class='btn btn-info btn-sm'>Update</button></td>
+                        </form>
+                        <td><a href='{{url_for("deleteitem", id=key)}}' class='btn btn-danger btn-sm'>Delete</a></td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div class="d-flex flex-column align-items-end">
+        <!-- <strong>Total Without 6% Tax: Rs {{total_without_tax}}</strong>
+        <br>
+        <strong>Total tax: Rs {{tax}}</strong>
+        <br> -->
+        <h3>Grand Total : Rs {{total_without_tax}}</h3>
+        <hr>
+        <a href="/" class="btn btn-success">CheckOut</a>
+        <hr>
+        <a href="{{url_for('clearcart')}}" class="btn btn-secondary">Clear Cart</a>
+    </div>
+</div>
+{% endblock body_block %}
