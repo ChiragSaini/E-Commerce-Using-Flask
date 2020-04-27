@@ -25,6 +25,7 @@
  ### To-Do
  <ul>
   <li>Seprate Carts for all customers</li>
+  <li>Implement Search Functionality</li>
   <li>Adding some sort of Payments System</li>
   <li>Some Sort of verification for customer registration</li>
   <li>More Details and Images on Product Details Page</li>
